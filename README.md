@@ -1,3 +1,8 @@
+-=(EDSAC_Senhor notes)=-
+
+Tested: Working Video 720p, 1080p & sound.
+
+___
 # EDSAC FPGA core for MiSTer
 
 <img align="right" src="img/edsac2.gif">
