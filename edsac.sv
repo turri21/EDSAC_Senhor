@@ -36,7 +36,7 @@ module emu
    input         RESET,
 
    //Must be passed to hps_io module
-   inout  [45:0] HPS_BUS,
+   inout  [48:0] HPS_BUS,
 
    //Base video clock. Usually equals to CLK_SYS.
    output        CLK_VIDEO,
@@ -141,7 +141,7 @@ assign VIDEO_ARX = status[1] ? 8'd4 : 8'd16;
 assign VIDEO_ARY = status[1] ? 8'd3 : 8'd9;
 
 `include "build_id.v"
-`include "util.sv"
+`include "rtl/util.sv"
 localparam CONF_STR = 
 {
    "EDSAC;;",
@@ -188,12 +188,12 @@ wire [31:0] ioctl_file_ext;
 
 wire [10:0] ps2_key;
 
-hps_io #(.STRLEN($size(CONF_STR)>>3)) hps_io
+hps_io #(.CONF_STR(CONF_STR),.WIDE(1)) hps_io
 (
    .clk_sys(clk_sys),
    .HPS_BUS(HPS_BUS),
 
-   .conf_str(CONF_STR),
+//   .conf_str(CONF_STR),
 
    .buttons(buttons),
    .status(status),
@@ -336,8 +336,8 @@ sound_lib soundlib (
    
 /* ADPCM that decodes 4 bit chunks into 12 bit raw audio */
 adpcm_decoder adpcm (
-   .reset(sound_duration == 0),
-   .clock(snd_wait == 0),
+   .reset(sound_duration == 1),
+   .clock(snd_wait == 1),
    .in_pcm(sound_adpcm),
    .sample(adpcm_out)
 );
