@@ -2,6 +2,18 @@
 
 Tested: Working Video 720p, 1080p & sound.
 
+Dev notes:
+
+Memory not loading tape data fix: Clock swap in sys.tcl 
+
+Sound distortion fix: 
+
+In file EDSAC.sv change 0 to 1
+
+line 339 .reset(sound_duration == 1),
+
+line 340 .clock(snd_wait == 1),
+
 ___
 # EDSAC FPGA core for MiSTer
 
