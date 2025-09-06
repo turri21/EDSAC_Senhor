@@ -4,7 +4,7 @@ Tested: Working Video 720p, 1080p & sound.
 
 Dev notes:
 
-Memory not loading tape data fix: Clock swap in sys.tcl [Not needed with newest framework]
+Memory not loading tape data fix: Core must have the latest sys update and the latest MiSTer binary installed (alternatively try to swap clocks in sys.tcl).
 
 Sound distortion fix: 
 
