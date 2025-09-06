@@ -4,7 +4,7 @@ Tested: Working Video 720p, 1080p & sound.
 
 Dev notes:
 
-Memory not loading tape data fix: Clock swap in sys.tcl 
+Memory not loading tape data fix: Clock swap in sys.tcl [Not needed with newest framework]
 
 Sound distortion fix: 
 
